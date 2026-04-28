@@ -1,1 +1,300 @@
-<h1>    this is a handmade dometic natural pickle AKA nepali achar of .......       </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nepali Achar | Traditional Pickles</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fff8ec;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #b91c1c, #f97316);
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 80px 8%;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("https://images.unsplash.com/photo-1604908177522-402c9a1f0565?auto=format&fit=crop&w=1400&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      background: #facc15;
+      color: #7f1d1d;
+      padding: 12px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 60px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      color: #991b1b;
+      margin-bottom: 35px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      color: #b91c1c;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #15803d;
+    }
+
+    .about {
+      background: #ffedd5;
+      border-radius: 25px;
+      text-align: center;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .feature {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.1);
+    }
+
+    .feature h3 {
+      color: #c2410c;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      background: #7f1d1d;
+      color: white;
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    footer {
+      background: #451a03;
+      color: white;
+      text-align: center;
+      padding: 18px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 8px;
+      }
+
+      .hero h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🇳🇵 Nepali Achar</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Authentic Nepali Achar</h2>
+    <p>Homemade spicy, tangy, and traditional Nepali pickles made with love — Mango, Mix, Lasoon, Timur, and more.</p>
+    <a href="#products" class="btn">Explore Achar</a>
+  </section>
+
+  <section id="products">
+    <h2 class="section-title">Our Achar Varieties</h2>
+
+    <div class="products">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80" alt="Mango Pickle">
+        <div class="card-content">
+          <h3>Mango Achar</h3>
+          <p>Traditional spicy mango pickle with Nepali masala.</p>
+          <p class="price">Rs. 250 / Jar</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80" alt="Mixed Pickle">
+        <div class="card-content">
+          <h3>Mix Achar</h3>
+          <p>A tasty mix of vegetables, spices, and mustard oil.</p>
+          <p class="price">Rs. 280 / Jar</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=800&q=80" alt="Garlic Pickle">
+        <div class="card-content">
+          <h3>Lasoon Achar</h3>
+          <p>Strong, spicy garlic pickle loved with dal bhat.</p>
+          <p class="price">Rs. 300 / Jar</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Chilli Pickle">
+        <div class="card-content">
+          <h3>Green Chilli Achar</h3>
+          <p>Hot and flavorful achar for spicy food lovers.</p>
+          <p class="price">Rs. 220 / Jar</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Our Achar</h2>
+
+    <div class="about">
+      <p>
+        Our Nepali Achar is prepared using fresh local ingredients, traditional Nepali spices,
+        mustard oil, garlic, chilli, mango, and mixed vegetables.  
+        Each jar brings the real taste of Nepal — perfect with dal bhat, roti, momo, chowmein,
+        and snacks.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Why Choose Us?</h2>
+
+    <div class="features">
+      <div class="feature">
+        <h3>🌿 Fresh Ingredients</h3>
+        <p>Made from fresh mango, garlic, chilli, and vegetables.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🇳🇵 Nepali Taste</h3>
+        <p>Traditional homemade flavor with authentic Nepali spices.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🥫 Hygienic Packing</h3>
+        <p>Clean, safe, and carefully packed in jars.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🚚 Delivery Available</h3>
+        <p>Order from home and get achar delivered to your place.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 class="section-title" style="color:white;">Contact Us</h2>
+    <p>📞 Phone: +977-9800000000</p>
+    <p>📍 Location: Butwal, Nepal</p>
+    <p>📧 Email: nepalichar@example.com</p>
+    <p>📱 Facebook / Instagram: @NepaliAchar</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Nepali Achar. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
