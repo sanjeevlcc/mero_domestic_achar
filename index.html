@@ -3,298 +3,1174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nepali Achar | Traditional Pickles</title>
+  <title>Himalayan Nepali Achar | Homemade Pickles</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #fff8ec;
-      color: #333;
+      background: #fff7ed;
+      color: #2b1b12;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: #431407;
+      color: #fff7ed;
+      text-align: center;
+      padding: 8px 20px;
+      font-size: 14px;
     }
 
     header {
-      background: linear-gradient(to right, #b91c1c, #f97316);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(127, 29, 29, 0.96);
+      backdrop-filter: blur(10px);
       color: white;
-      padding: 20px 8%;
+      padding: 16px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
-    header h1 {
-      font-size: 28px;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      background: #facc15;
+      color: #7f1d1d;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo h1 {
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    .logo span {
+      font-size: 12px;
+      color: #fed7aa;
     }
 
     nav a {
       color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
+      margin-left: 22px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #facc15;
     }
 
     .hero {
-      padding: 80px 8%;
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 40px;
+      padding: 70px 8%;
+      background:
+        radial-gradient(circle at top left, rgba(250, 204, 21, 0.28), transparent 35%),
+        linear-gradient(135deg, #7f1d1d 0%, #c2410c 55%, #f97316 100%);
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-text .tagline {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 8px 16px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .hero h2 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .hero h2 span {
+      color: #facc15;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 650px;
+      color: #fff7ed;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #facc15;
+      color: #7f1d1d;
+      box-shadow: 0 8px 20px rgba(250, 204, 21, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #fde047;
+    }
+
+    .btn-outline {
+      color: white;
+      border: 2px solid rgba(255,255,255,0.75);
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #7f1d1d;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 35px;
+      padding: 25px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 28px;
+      display: block;
+    }
+
+    .hero-card-info {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
       text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("https://images.unsplash.com/photo-1604908177522-402c9a1f0565?auto=format&fit=crop&w=1400&q=80");
+    }
+
+    .mini-box {
+      background: rgba(255,255,255,0.16);
+      border-radius: 18px;
+      padding: 14px 8px;
+    }
+
+    .mini-box strong {
+      display: block;
+      font-size: 22px;
+      color: #facc15;
+    }
+
+    .mini-box small {
+      font-size: 12px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 45px;
+    }
+
+    .section-header span {
+      color: #dc2626;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      color: #7f1d1d;
+      margin: 10px 0;
+    }
+
+    .section-header p {
+      color: #6b3f2c;
+      font-size: 17px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 14px 35px rgba(87, 43, 21, 0.13);
+      transition: 0.35s;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 22px 45px rgba(87, 43, 21, 0.22);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: #facc15;
+      color: #7f1d1d;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .product-content {
+      padding: 24px;
+    }
+
+    .product-content h3 {
+      color: #991b1b;
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .product-content p {
+      color: #6b3f2c;
+      margin-bottom: 15px;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #fed7aa;
+      padding-top: 14px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 800;
+      color: #15803d;
+    }
+
+    .spice {
+      color: #dc2626;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .story {
+      background: #ffedd5;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .story-img {
+      border-radius: 35px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(87,43,21,0.18);
+    }
+
+    .story-img img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-text h2 {
+      font-size: 42px;
+      color: #7f1d1d;
+      margin-bottom: 18px;
+    }
+
+    .story-text p {
+      margin-bottom: 18px;
+      font-size: 17px;
+      color: #5f351f;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .check-item {
+      background: white;
+      padding: 14px 18px;
+      border-radius: 16px;
+      color: #7f1d1d;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 20px;
+    }
+
+    .ingredient {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 18px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(87, 43, 21, 0.1);
+      transition: 0.3s;
+    }
+
+    .ingredient:hover {
+      transform: scale(1.04);
+    }
+
+    .ingredient .icon {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .ingredient h3 {
+      color: #991b1b;
+      margin-bottom: 5px;
+    }
+
+    .process {
+      background: linear-gradient(135deg, #431407, #7f1d1d);
+      color: white;
+    }
+
+    .process .section-header h2,
+    .process .section-header p,
+    .process .section-header span {
+      color: white;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 24px;
+      padding: 26px;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: #facc15;
+      color: #7f1d1d;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .combo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .combo {
+      background: white;
+      padding: 28px;
+      border-radius: 26px;
+      box-shadow: 0 12px 30px rgba(87, 43, 21, 0.12);
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    .combo:hover {
+      border-color: #f97316;
+      transform: translateY(-6px);
+    }
+
+    .combo h3 {
+      color: #991b1b;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .combo ul {
+      margin: 15px 0 20px 20px;
+      color: #6b3f2c;
+    }
+
+    .combo .combo-price {
+      font-size: 25px;
+      font-weight: 900;
+      color: #15803d;
+    }
+
+    .testimonials {
+      background: #fff1dc;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 28px;
+      border-radius: 25px;
+      box-shadow: 0 10px 28px rgba(87,43,21,0.1);
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .testimonial p {
+      color: #5f351f;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .testimonial strong {
+      color: #991b1b;
+    }
+
+    .order {
+      background:
+        linear-gradient(rgba(127,29,29,0.88), rgba(127,29,29,0.88)),
+        url("https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=1400&q=80");
       background-size: cover;
       background-position: center;
       color: white;
     }
 
-    .hero h2 {
-      font-size: 48px;
-      margin-bottom: 15px;
+    .order-box {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 32px;
+      padding: 35px;
+      backdrop-filter: blur(8px);
     }
 
-    .hero p {
-      font-size: 20px;
-      max-width: 700px;
+    .order-box h2 {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .order-box > p {
+      text-align: center;
+      color: #ffedd5;
+      margin-bottom: 28px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 15px;
+      border-radius: 14px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+    }
+
+    textarea {
+      grid-column: 1 / -1;
+      height: 110px;
+      resize: none;
+    }
+
+    .form-btn {
+      grid-column: 1 / -1;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .faq-grid {
+      display: grid;
+      gap: 18px;
+      max-width: 900px;
       margin: auto;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      background: #facc15;
-      color: #7f1d1d;
-      padding: 12px 28px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 60px 8%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 34px;
-      color: #991b1b;
-      margin-bottom: 35px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
+    details {
       background: white;
       border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-      transition: 0.3s;
+      padding: 20px 24px;
+      box-shadow: 0 8px 20px rgba(87,43,21,0.09);
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .card-content h3 {
-      color: #b91c1c;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #15803d;
-    }
-
-    .about {
-      background: #ffedd5;
-      border-radius: 25px;
-      text-align: center;
-      line-height: 1.8;
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: #991b1b;
       font-size: 18px;
     }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      text-align: center;
-    }
-
-    .feature {
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 5px 14px rgba(0,0,0,0.1);
-    }
-
-    .feature h3 {
-      color: #c2410c;
-      margin-bottom: 10px;
+    details p {
+      margin-top: 12px;
+      color: #6b3f2c;
     }
 
     .contact {
-      background: #7f1d1d;
+      background: #431407;
       color: white;
-      text-align: center;
+      padding: 60px 8%;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      font-size: 38px;
+      margin-bottom: 14px;
+      color: #facc15;
     }
 
     .contact p {
-      margin: 10px 0;
-      font-size: 18px;
+      margin-bottom: 10px;
+      color: #ffedd5;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .social-links a {
+      background: #7f1d1d;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.12);
+      padding: 25px;
+      border-radius: 25px;
     }
 
     footer {
-      background: #451a03;
-      color: white;
       text-align: center;
-      padding: 18px;
+      background: #1c0a03;
+      color: #fed7aa;
+      padding: 20px;
+      font-size: 14px;
     }
 
-    @media (max-width: 700px) {
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 2000;
+    }
+
+    @media (max-width: 900px) {
       header {
         flex-direction: column;
-        gap: 15px;
+        gap: 14px;
+      }
+
+      nav {
+        text-align: center;
       }
 
       nav a {
         margin: 8px;
+        display: inline-block;
       }
 
-      .hero h2 {
-        font-size: 34px;
+      .hero,
+      .story-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        text-align: center;
+        min-height: auto;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-card img,
+      .story-img img {
+        height: 320px;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      section {
+        padding: 60px 6%;
+      }
+
+      header {
+        padding: 14px 5%;
+      }
+
+      .hero {
+        padding: 55px 6%;
+      }
+
+      .hero-card-info {
+        grid-template-columns: 1fr;
+      }
+
+      .order-box {
+        padding: 25px 18px;
       }
     }
   </style>
 </head>
 
 <body>
+  <div class="top-bar">
+    Fresh Homemade Nepali Achar | Delivery Available in Nepal | Call: +977-9800000000
+  </div>
 
   <header>
-    <h1>🇳🇵 Nepali Achar</h1>
+    <div class="logo">
+      <div class="logo-icon">अ</div>
+      <div>
+        <h1>Himalayan Achar</h1>
+        <span>Authentic Nepali Pickle</span>
+      </div>
+    </div>
+
     <nav>
       <a href="#home">Home</a>
       <a href="#products">Products</a>
-      <a href="#about">About</a>
+      <a href="#story">Our Story</a>
+      <a href="#combos">Combos</a>
+      <a href="#order">Order</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero" id="home">
-    <h2>Authentic Nepali Achar</h2>
-    <p>Homemade spicy, tangy, and traditional Nepali pickles made with love — Mango, Mix, Lasoon, Timur, and more.</p>
-    <a href="#products" class="btn">Explore Achar</a>
+    <div class="hero-text">
+      <span class="tagline">🇳🇵 Traditional Taste of Nepal</span>
+      <h2>Spicy, Tangy & <span>Homemade</span> Nepali Achar</h2>
+      <p>
+        Enjoy the real taste of Nepali kitchen with our handmade mango achar, mix achar,
+        lasoon achar, chilli achar, timur achar, and seasonal pickle varieties. Perfect with
+        dal bhat, momo, roti, chowmein, and snacks.
+      </p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-primary">View Products</a>
+        <a href="#order" class="btn btn-outline">Order Now</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=900&q=80" alt="Nepali Achar Jar" />
+      <div class="hero-card-info">
+        <div class="mini-box">
+          <strong>100%</strong>
+          <small>Homemade</small>
+        </div>
+        <div class="mini-box">
+          <strong>8+</strong>
+          <small>Varieties</small>
+        </div>
+        <div class="mini-box">
+          <strong>Fresh</strong>
+          <small>Every Batch</small>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="products">
-    <h2 class="section-title">Our Achar Varieties</h2>
+    <div class="section-header">
+      <span>Our Products</span>
+      <h2>Popular Achar Varieties</h2>
+      <p>Choose from traditional Nepali flavors made with local ingredients, mustard oil, spices, and love.</p>
+    </div>
 
     <div class="products">
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80" alt="Mango Pickle">
-        <div class="card-content">
+      <div class="product-card">
+        <span class="badge">Best Seller</span>
+        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=900&q=80" alt="Mango Achar" />
+        <div class="product-content">
           <h3>Mango Achar</h3>
-          <p>Traditional spicy mango pickle with Nepali masala.</p>
-          <p class="price">Rs. 250 / Jar</p>
+          <p>Classic raw mango pickle with Nepali spices, mustard oil, chilli, and tangy flavor.</p>
+          <div class="product-footer">
+            <span class="price">Rs. 250</span>
+            <span class="spice">🌶️🌶️ Medium</span>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80" alt="Mixed Pickle">
-        <div class="card-content">
+      <div class="product-card">
+        <span class="badge">Family Choice</span>
+        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80" alt="Mix Achar" />
+        <div class="product-content">
           <h3>Mix Achar</h3>
-          <p>A tasty mix of vegetables, spices, and mustard oil.</p>
-          <p class="price">Rs. 280 / Jar</p>
+          <p>Mixed vegetables, carrot, radish, chilli, spices, and mustard oil in one tasty jar.</p>
+          <div class="product-footer">
+            <span class="price">Rs. 280</span>
+            <span class="spice">🌶️🌶️ Medium</span>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=800&q=80" alt="Garlic Pickle">
-        <div class="card-content">
+      <div class="product-card">
+        <span class="badge">Strong Flavor</span>
+        <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=900&q=80" alt="Lasoon Achar" />
+        <div class="product-content">
           <h3>Lasoon Achar</h3>
-          <p>Strong, spicy garlic pickle loved with dal bhat.</p>
-          <p class="price">Rs. 300 / Jar</p>
+          <p>Garlic pickle with bold aroma, spicy masala, and perfect taste for dal bhat lovers.</p>
+          <div class="product-footer">
+            <span class="price">Rs. 300</span>
+            <span class="spice">🌶️🌶️🌶️ Hot</span>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Chilli Pickle">
-        <div class="card-content">
+      <div class="product-card">
+        <span class="badge">Hot</span>
+        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=80" alt="Green Chilli Achar" />
+        <div class="product-content">
           <h3>Green Chilli Achar</h3>
-          <p>Hot and flavorful achar for spicy food lovers.</p>
-          <p class="price">Rs. 220 / Jar</p>
+          <p>Fresh green chilli pickle for people who love a powerful spicy kick.</p>
+          <div class="product-footer">
+            <span class="price">Rs. 220</span>
+            <span class="spice">🌶️🌶️🌶️🌶️ Extra Hot</span>
+          </div>
         </div>
       </div>
 
+      <div class="product-card">
+        <span class="badge">Nepali Special</span>
+        <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=900&q=80" alt="Timur Achar" />
+        <div class="product-content">
+          <h3>Timur Achar</h3>
+          <p>Unique Nepali timur flavor with tingling taste, perfect for momo and snacks.</p>
+          <div class="product-footer">
+            <span class="price">Rs. 320</span>
+            <span class="spice">🌶️🌶️ Medium</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">Seasonal</span>
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80" alt="Lapsi Achar" />
+        <div class="product-content">
+          <h3>Lapsi Achar</h3>
+          <p>Sweet, sour, and spicy lapsi pickle with a traditional Nepali homemade taste.</p>
+          <div class="product-footer">
+            <span class="price">Rs. 260</span>
+            <span class="spice">🌶️ Mild</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="about">
-    <h2 class="section-title">About Our Achar</h2>
+  <section class="story" id="story">
+    <div class="story-grid">
+      <div class="story-img">
+        <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=900&q=80" alt="Homemade Nepali Food" />
+      </div>
 
-    <div class="about">
-      <p>
-        Our Nepali Achar is prepared using fresh local ingredients, traditional Nepali spices,
-        mustard oil, garlic, chilli, mango, and mixed vegetables.  
-        Each jar brings the real taste of Nepal — perfect with dal bhat, roti, momo, chowmein,
-        and snacks.
-      </p>
+      <div class="story-text">
+        <h2>Our Story</h2>
+        <p>
+          Himalayan Achar was started with one simple idea: to bring the traditional taste of
+          Nepali homemade pickle to every table. Our recipes are inspired by the flavors found
+          in village kitchens, family gatherings, and everyday dal bhat meals.
+        </p>
+        <p>
+          We prepare achar in small batches to maintain freshness, taste, and quality. Every jar
+          is made with selected ingredients, carefully mixed spices, and hygienic packing.
+        </p>
+
+        <div class="check-list">
+          <div class="check-item">✅ Made with fresh local ingredients</div>
+          <div class="check-item">✅ Traditional Nepali masala and mustard oil</div>
+          <div class="check-item">✅ Hygienic jar packing and careful storage</div>
+          <div class="check-item">✅ Perfect for home, restaurant, and gift packs</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2 class="section-title">Why Choose Us?</h2>
+  <section id="ingredients">
+    <div class="section-header">
+      <span>Fresh Ingredients</span>
+      <h2>What Goes Inside Our Achar?</h2>
+      <p>Simple ingredients, powerful taste, and traditional Nepali flavor.</p>
+    </div>
 
-    <div class="features">
-      <div class="feature">
-        <h3>🌿 Fresh Ingredients</h3>
-        <p>Made from fresh mango, garlic, chilli, and vegetables.</p>
+    <div class="ingredients-grid">
+      <div class="ingredient">
+        <div class="icon">🥭</div>
+        <h3>Mango</h3>
+        <p>Raw mango for sour and tangy flavor.</p>
+      </div>
+      <div class="ingredient">
+        <div class="icon">🧄</div>
+        <h3>Lasoon</h3>
+        <p>Fresh garlic for bold aroma and taste.</p>
+      </div>
+      <div class="ingredient">
+        <div class="icon">🌶️</div>
+        <h3>Chilli</h3>
+        <p>Green and red chilli for spice lovers.</p>
+      </div>
+      <div class="ingredient">
+        <div class="icon">🛢️</div>
+        <h3>Mustard Oil</h3>
+        <p>Traditional oil for authentic taste.</p>
+      </div>
+      <div class="ingredient">
+        <div class="icon">🧂</div>
+        <h3>Spices</h3>
+        <p>Salt, turmeric, fenugreek, cumin, and more.</p>
+      </div>
+      <div class="ingredient">
+        <div class="icon">🌿</div>
+        <h3>Timur</h3>
+        <p>Nepali spice with unique tingling flavor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="section-header">
+      <span>Our Process</span>
+      <h2>How We Make It</h2>
+      <p>From fresh ingredients to ready-to-eat achar jars.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Ingredient Selection</h3>
+        <p>We select fresh mango, garlic, chilli, vegetables, and Nepali spices.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Cleaning & Cutting</h3>
+        <p>Ingredients are washed, dried, and cut properly for clean preparation.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Masala Mixing</h3>
+        <p>Traditional spices and mustard oil are mixed carefully for balanced taste.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Packing & Delivery</h3>
+        <p>The achar is packed in jars and delivered fresh to customers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="combos">
+    <div class="section-header">
+      <span>Special Offers</span>
+      <h2>Achar Combo Packs</h2>
+      <p>Perfect for families, restaurants, and gifts.</p>
+    </div>
+
+    <div class="combo-grid">
+      <div class="combo">
+        <h3>Starter Pack</h3>
+        <p>Best for first-time tasting.</p>
+        <ul>
+          <li>Mango Achar</li>
+          <li>Mix Achar</li>
+          <li>Green Chilli Achar</li>
+        </ul>
+        <div class="combo-price">Rs. 699</div>
       </div>
 
-      <div class="feature">
-        <h3>🇳🇵 Nepali Taste</h3>
-        <p>Traditional homemade flavor with authentic Nepali spices.</p>
+      <div class="combo">
+        <h3>Family Pack</h3>
+        <p>For daily dal bhat and snacks.</p>
+        <ul>
+          <li>Mango Achar</li>
+          <li>Lasoon Achar</li>
+          <li>Mix Achar</li>
+          <li>Lapsi Achar</li>
+        </ul>
+        <div class="combo-price">Rs. 999</div>
       </div>
 
-      <div class="feature">
-        <h3>🥫 Hygienic Packing</h3>
-        <p>Clean, safe, and carefully packed in jars.</p>
+      <div class="combo">
+        <h3>Restaurant Pack</h3>
+        <p>Bulk pack for cafes, hotels, and restaurants.</p>
+        <ul>
+          <li>Custom flavor selection</li>
+          <li>Bulk jar packing</li>
+          <li>Regular delivery option</li>
+        </ul>
+        <div class="combo-price">Contact Us</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="section-header">
+      <span>Happy Customers</span>
+      <h2>What People Say</h2>
+      <p>Real taste that reminds people of home.</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>“Mango achar ko taste ekdam ghar ko jasto cha. Dal bhat sanga perfect!”</p>
+        <strong>- Sita, Butwal</strong>
       </div>
 
-      <div class="feature">
-        <h3>🚚 Delivery Available</h3>
-        <p>Order from home and get achar delivered to your place.</p>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>“Lasoon achar spicy and flavorful cha. Momo sanga khada best lagyo.”</p>
+        <strong>- Ramesh, Kathmandu</strong>
       </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>“Packaging ramro cha, delivery fast cha, taste pani authentic Nepali.”</p>
+        <strong>- Anita, Pokhara</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="order" id="order">
+    <div class="order-box">
+      <h2>Place Your Order</h2>
+      <p>Fill this simple form. You can connect it later with WhatsApp, email, or backend system.</p>
+
+      <form onsubmit="placeOrder(event)">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="tel" id="phone" placeholder="Phone Number" required />
+
+        <select id="product" required>
+          <option value="">Select Achar</option>
+          <option>Mango Achar</option>
+          <option>Mix Achar</option>
+          <option>Lasoon Achar</option>
+          <option>Green Chilli Achar</option>
+          <option>Timur Achar</option>
+          <option>Lapsi Achar</option>
+          <option>Combo Pack</option>
+        </select>
+
+        <select id="quantity" required>
+          <option value="">Select Quantity</option>
+          <option>1 Jar</option>
+          <option>2 Jars</option>
+          <option>3 Jars</option>
+          <option>Family Pack</option>
+          <option>Bulk / Restaurant Order</option>
+        </select>
+
+        <input type="text" id="address" placeholder="Delivery Address" required />
+        <input type="text" id="city" placeholder="City / District" required />
+
+        <textarea id="message" placeholder="Extra message, spice level, or delivery instruction"></textarea>
+
+        <button type="submit" class="btn btn-primary form-btn">Submit Order</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="section-header">
+      <span>FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Simple answers for common customer questions.</p>
+    </div>
+
+    <div class="faq-grid">
+      <details>
+        <summary>How long can achar be stored?</summary>
+        <p>If stored properly in a clean, dry place and handled with a dry spoon, achar can last for several weeks to months depending on the variety.</p>
+      </details>
+
+      <details>
+        <summary>Is delivery available?</summary>
+        <p>Yes, delivery is available. You can add your address in the order form or contact us directly by phone or WhatsApp.</p>
+      </details>
+
+      <details>
+        <summary>Can I order less spicy achar?</summary>
+        <p>Yes, you can mention your preferred spice level in the message box while placing your order.</p>
+      </details>
+
+      <details>
+        <summary>Do you supply restaurants?</summary>
+        <p>Yes, we provide bulk and regular supply options for restaurants, cafes, hotels, and grocery stores.</p>
+      </details>
     </div>
   </section>
 
   <section class="contact" id="contact">
-    <h2 class="section-title" style="color:white;">Contact Us</h2>
-    <p>📞 Phone: +977-9800000000</p>
-    <p>📍 Location: Butwal, Nepal</p>
-    <p>📧 Email: nepalichar@example.com</p>
-    <p>📱 Facebook / Instagram: @NepaliAchar</p>
+    <div class="contact-grid">
+      <div>
+        <h2>Contact Himalayan Achar</h2>
+        <p>📍 Location: Butwal, Nepal</p>
+        <p>📞 Phone: +977-9800000000</p>
+        <p>📧 Email: himalayanachar@example.com</p>
+        <p>🕘 Opening Time: 8:00 AM - 7:00 PM</p>
+
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h3>Business Inquiry</h3>
+        <p>For restaurant supply, grocery partnership, gift packs, or bulk order, contact us directly.</p>
+        <p><strong>Minimum bulk order:</strong> 10 jars</p>
+        <p><strong>Custom label packing:</strong> Available</p>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2026 Nepali Achar. All Rights Reserved.</p>
+    <p>© 2026 Himalayan Achar. All Rights Reserved. | Made with ❤️ in Nepal</p>
   </footer>
 
+  <a class="whatsapp-float" href="https://wa.me/9779800000000" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <script>
+    function placeOrder(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const product = document.getElementById("product").value;
+      const quantity = document.getElementById("quantity").value;
+      const address = document.getElementById("address").value;
+      const city = document.getElementById("city").value;
+      const message = document.getElementById("message").value;
+
+      const orderText =
+        "New Achar Order%0A" +
+        "Name: " + name + "%0A" +
+        "Phone: " + phone + "%0A" +
+        "Product: " + product + "%0A" +
+        "Quantity: " + quantity + "%0A" +
+        "Address: " + address + "%0A" +
+        "City: " + city + "%0A" +
+        "Message: " + message;
+
+      alert("Thank you " + name + "! Your order is ready to send on WhatsApp.");
+
+      window.open("https://wa.me/9779800000000?text=" + orderText, "_blank");
+    }
+  </script>
 </body>
 </html>
